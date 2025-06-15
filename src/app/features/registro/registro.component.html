@@ -1,0 +1,53 @@
+<form [formGroup]="registroForm" (ngSubmit)="onSubmit()" novalidate>
+    <div class="mb-3">
+      <label for="nombreCompleto" class="form-label">Nombre completo</label>
+      <input type="text" class="form-control" id="nombreCompleto" formControlName="nombreCompleto">
+      <div class="invalid-feedback d-block" *ngIf="registroForm.get('nombreCompleto')?.touched && registroForm.get('nombreCompleto')?.invalid">
+        Ingrese su nombre completo.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="nombreUsuario" class="form-label">Nombre de usuario</label>
+      <input type="text" class="form-control" id="nombreUsuario" formControlName="nombreUsuario">
+      <div class="invalid-feedback d-block" *ngIf="registroForm.get('nombreUsuario')?.touched && registroForm.get('nombreUsuario')?.invalid">
+        Ingrese un nombre de usuario.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="correo" class="form-label">Correo electrónico</label>
+      <input type="email" class="form-control" id="correo" formControlName="correo">
+      <div class="invalid-feedback d-block" *ngIf="registroForm.get('correo')?.touched && registroForm.get('correo')?.invalid">
+        Ingrese un correo válido.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="contrasena" class="form-label">Contraseña</label>
+      <input type="password" class="form-control" id="contrasena" formControlName="contrasena">
+      <div class="invalid-feedback d-block" *ngIf="registroForm.get('contrasena')?.touched && registroForm.get('contrasena')?.invalid">
+        La contraseña debe tener entre 6 y 18 caracteres, al menos un número y una mayúscula.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="repetirContrasena" class="form-label">Repetir contraseña</label>
+      <input type="password" class="form-control" id="repetirContrasena" formControlName="repetirContrasena">
+      <div class="invalid-feedback d-block" *ngIf="registroForm.hasError('passwordsNoCoinciden') && registroForm.get('repetirContrasena')?.touched">
+        Las contraseñas no coinciden.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="fechaNacimiento" class="form-label">Fecha de nacimiento</label>
+      <input type="date" class="form-control" id="fechaNacimiento" formControlName="fechaNacimiento">
+      <div class="invalid-feedback d-block" *ngIf="registroForm.get('fechaNacimiento')?.touched && registroForm.get('fechaNacimiento')?.hasError('menorDeTrece')">
+        Debe ser mayor de 13 años.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="direccion" class="form-label">Dirección de despacho (opcional)</label>
+      <input type="text" class="form-control" id="direccion" formControlName="direccion">
+    </div>
+    <div id="mensajeRegistro" class="mb-3 text-success">{{ mensaje }}</div>
+    <div class="d-flex justify-content-between">
+      <button type="submit" class="btn btn-ludoteca">Enviar</button>
+      <button type="button" class="btn btn-secondary" (click)="limpiarFormulario()">Limpiar</button>
+    </div>
+  </form> 

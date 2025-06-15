@@ -1,0 +1,46 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2a9d8f;">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="#">Duoc-Games</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <button type="button" class="btn btn-ludoteca ms-3" data-bs-toggle="modal" data-bs-target="#modalRegistro">
+              Registrarse
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<main class="container py-4">
+  <div class="row mb-3">
+    <div class="col-12">
+      <app-filtros (categoriaSeleccionada)="onCategoriaSeleccionada($event)"></app-filtros>
+    </div>
+  </div>
+  <app-categoria-imagen [nombreCategoria]="categoriaSeleccionada"></app-categoria-imagen>
+  <app-juegos-list [juegos]="juegosFiltrados" [juegosPorCarga]="3"></app-juegos-list>
+</main>
+<footer>
+  <p>&copy; 2025 Duoc-Games</p>
+</footer>
+<!-- Modal de Registro (puedes integrar <app-registro> aquí si lo deseas) -->
+<!-- Modal de Registro -->
+<div class="modal fade" id="modalRegistro" tabindex="-1" aria-labelledby="modalRegistroLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalRegistroLabel">Registro de Usuario</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <app-registro></app-registro>
+      </div>
+    </div>
+  </div>
+</div> 

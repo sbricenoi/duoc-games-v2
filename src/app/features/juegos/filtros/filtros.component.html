@@ -1,0 +1,7 @@
+
+<button class="btn btn-genero btn-sm" (click)="seleccionarCategoria(null)">Todos</button>
+<button *ngFor="let cat of categorias"
+        class="btn btn-genero btn-sm"
+        (click)="seleccionarCategoria(cat.nombre)">
+  {{ cat.nombre }}
+</button>

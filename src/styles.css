@@ -1,0 +1,136 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Estilos para el modal y el formulario de registro */
+.modal-content {
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(44, 62, 80, 0.2);
+}
+
+.modal-header {
+  background: #2a9d8f;
+  color: #fff;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.btn-ludoteca {
+  background-color: #2a9d8f;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 20px;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+.btn-ludoteca:hover {
+  background-color: #21867a;
+}
+
+.invalid-feedback.d-block {
+  color: #e74c3c;
+  font-size: 0.95em;
+}
+
+input.ng-invalid.ng-touched,
+select.ng-invalid.ng-touched {
+  border-color: #e74c3c;
+}
+
+input, select {
+  border-radius: 6px !important;
+}
+
+.modal-body {
+  padding: 2rem;
+}
+
+@media (max-width: 576px) {
+  .modal-dialog {
+    margin: 1rem;
+  }
+  .modal-body {
+    padding: 1rem;
+  }
+}
+
+/* Botones de filtro y generales */
+.btn-genero {
+  background-color: #f4a261;
+  color: #fff;
+  border: none;
+  margin: 0 4px 4px 0;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.btn-genero:hover, .btn-genero.active {
+  background-color: #e76f51;
+  color: #fff;
+}
+
+/* Tarjetas de juegos */
+.card {
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 2px 12px rgba(44, 62, 80, 0.08);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.card:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(44, 62, 80, 0.18);
+}
+
+/* Badge de género */
+.badge-genero {
+  background: #264653;
+  color: #fff;
+  font-size: 0.85em;
+  border-radius: 8px;
+  padding: 4px 10px;
+}
+
+/* Imagen de categoría */
+.categoria-imagen {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+}
+.categoria-imagen img {
+  max-height: 80px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.12);
+}
+.titulo-categoria {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #264653;
+}
+
+/* Contenedor del botón cargar más */
+.loadmore-container {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0 1rem 0;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1.5rem 0 0.5rem 0;
+  color: #888;
+  font-size: 1em;
+  background: #f8f9fa;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 2rem;
+}
+
+/* Responsive para tarjetas */
+@media (max-width: 768px) {
+  .categoria-imagen img {
+    max-height: 50px;
+  }
+  .titulo-categoria {
+    font-size: 1.1rem;
+  }
+}
